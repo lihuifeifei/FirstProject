@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>quanxuanlianxi</title>
+
+    <script type="text/javascript">
+        window.onload=function(){
+            var items=document.getElementsByName("items");
+            var  checkedAllBtn=document.getElementById("checkedAllBtn");
+            checkedAllBtn.onclick=function(){
+                //alert("all is selected");
+
+                for(var i=0;i<items.length;i++){
+                        items[i].checked=true;
+                }
+            }
+        var checkedNoBt=document.getElementById("checkedNoBt");
+            checkedNoBt.onclick=function(){
+                for(var i=0;i<items.length;i++){
+                    items[i].checked=false;
+                }
+            }
+        var checkRevBtn=document.getElementById("checkRevBtn");
+            checkRevBtn.onclick=function(){
+//                 for(var i=0;i<items.length;i++){
+//                     if(items[i].checked){
+//                         items[i].checked=false;
+//                     }else{
+//                         items[i].checked=true;
+//                     }}
+                items[i].checked=!items[i].checked;
+                 }
+            var sendBtn=document.getElementById("sendBtn");
+            for(var i=0;i<items.length;i++){
+                if(items[i].checked){
+                    alert(items[i].value);}
+
+            }
+            }
+
+
+    </script>
+</head>
+<body>
+    <form method="post" action="">what is your love?
+        <input type="checkbox" id="checkdAllBox"/>
+        <br/>
+        <input type="checkbox" name="items" value="football"/>
+        <input type="checkbox" name="items" value="basketball"/>
+        <input type="checkbox" name="items" value="pingpangball"/>
+        <br/>
+        <input type="button" id="checkedAllBtn" value="quanxuan"/>
+        <input type="button" id="checkedNoBtn" value="quanbuxuan"/>
+        <input type="button" id="checkRevBtn" value="fanxuan"/>
+        <input type="button" id="sendBtn" value="sublime"/>
+    </form>
+
+</body>
+</html>

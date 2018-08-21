@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>photos</title>
+    <style type="text/css">
+        *{
+            magin:0;
+            padding:0;
+        }
+
+        #outer{
+            width:1800px;
+            margin:50px auto;
+            padding:10px;
+            background-color:greenyellow;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+          var before=getElementById("before");
+          var next=getElementById("next");
+
+          var img=document.getElementsByName("img")[0];
+          var imgArr=["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg","6.jpeg","7.jpeg","8.jpeg","9.jpeg","10.jpeg"];
+            //图片数组
+            var index=0;
+
+            var info=document.getElementById("info");
+
+          before.onclick=function(){
+              index--;
+              if(index<0){
+                  index=imgArr.length-1;
+              }
+              img.src=imgArr[index];
+              info.innerHTML="一共"+imgArr.length+"张图片，当前第"+(index+1)+"张";
+              //设置提示文字
+          };
+          //上一张按钮
+          next.onclick=function(){
+              index++;
+              if(index>imgArr.length-1){
+                  index=0;
+              }
+              img.src=imgArr[index];
+              info.innerHTML="一共"+imgArr.length+"张图片，当前第"+(index+1)+"张";
+              //设置提示文字
+          };
+        };
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <p id="info"></p>
+        <img src="1.jpeg" alt="beauty"/>
+        <button id="before">before</button>
+        <button id="next">next</button>
+    </div>
+
+</body>
+</html>
